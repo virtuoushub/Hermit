@@ -1,13 +1,13 @@
 import pygame
 import sys
 import math
-import utilities as u
+from . import utilities as u
 import copy
 import random
-import noise
-import projectile
-import tree
-import settings
+from . import noise
+from . import projectile
+from . import tree
+from . import settings
 
 pygame.init()
 

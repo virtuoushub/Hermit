@@ -2,7 +2,7 @@ import pygame
 import sys
 import math
 import random
-import utilities as u
+from . import utilities as u
 
 
 def drawTree(**p):
@@ -162,7 +162,7 @@ if __name__ == "__main__":
 			if event.type == pygame.QUIT: sys.exit()
 			if event.type == pygame.KEYDOWN:
 				if event.key==pygame.K_SPACE:
-					print event.key==pygame.K_SPACE
+					print(event.key==pygame.K_SPACE)
 					screen.fill([240,240,240])
 					for i in range(0,4):
 						[tree1,tree2,tree3,tree4][i](screen,100+i*200,500,30)

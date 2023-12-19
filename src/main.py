@@ -8,14 +8,14 @@
 ## built-in modules
 import sys
 import math
-import thread
+import _thread
 import random
 import string
 import os
 
 ## dependencies
 import pygame
-import pygame._view
+# import pygame._view
 import numpy
 
 ## custom modules
@@ -409,7 +409,7 @@ def exe(command):
 			mt(2, 3,2,1,0)
 			settings.msg = ["TERRAIN SET TO "+par[0]+".",settings.msgt]
 		elif com == "set tree density":
-			print terrain
+			print(terrain)
 			terrain = [terrain[3]]*4
 			totalMade = [0]*4
 			for landni in range(0,len(land)):
@@ -419,8 +419,8 @@ def exe(command):
 			mt(2, 3,2,1,0)
 		elif com == "eval":
 			settings.msg = [str(eval(par[0])),settings.msgt]
-	except Exception, e:
-		print "%s" % e
+	except Exception as e:
+		print("%s" % e)
 		settings.msg = ["COMMAND NOT EXECUTED.",settings.msgt]
 
 
@@ -572,7 +572,7 @@ def draw():
 		if locs[i]-x*lspds[i] < -width-buff:
 			locs[i] += width*2
 			Ls[i] = None
-			thread.start_new_thread(mt,(1, i))
+			_thread.start_new_thread(mt,(1, i))
 
 
 		if Lrs[i] != None:
@@ -581,7 +581,7 @@ def draw():
 		if locrs[i]-x*lspds[i] < -width-buff:
 			locrs[i] += width*2
 			Lrs[i] = None
-			thread.start_new_thread(mt,(2, i))
+			_thread.start_new_thread(mt,(2, i))
 	drawLand()
 
 
@@ -631,7 +631,7 @@ def main():
 Icon()
 makeBirds(10)
 
-t1 = thread.start_new_thread( mt, (1, 3,2,1,0) )
+t1 = _thread.start_new_thread( mt, (1, 3,2,1,0) )
 loadscreen()
 
 while loaded<allloads:
@@ -639,5 +639,5 @@ while loaded<allloads:
 print('loaded')
 
 treeDensity = 16
-t3 = thread.start_new_thread(mt, (2, 3,2,1,0))
+t3 = _thread.start_new_thread(mt, (2, 3,2,1,0))
 main()

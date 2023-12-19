@@ -38,5 +38,5 @@ def parse(command,allcommands):
 	return results
 if __name__ == "__main__":
 	while 1:
-		print(parse(raw_input("?"),[
-		"kill horse","kill dog","khan","kill cat","open door","eat meat","restore full health","roast full chicken","raw fury","eat shit","eat mother","kill motherfucker"]))
+		print((parse(input("?"),[
+		"kill horse","kill dog","khan","kill cat","open door","eat meat","restore full health","roast full chicken","raw fury","eat shit","eat mother","kill motherfucker"])))
