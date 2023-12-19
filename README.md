@@ -37,3 +37,23 @@ https://www.youtube.com/watch?v=mPYeTJd8klQ
 * `spawn -x -n`: spawn number n of animals x (x=deer,crane,bird,...,n>0)
 * `fullscreen -b`: toggle fullscreen (optional parameter b=0,1)
 * `restart`: restart the program
+
+---
+
+```sh
+python -m ensurepip --default-pip
+python -m pip install --upgrade pip
+python -m pip install 2to3
+```
+
+```sh
+python -m pip install -U pygame --user
+```
+
+sudo apk add sdl2-dev
+
+SDL-dev
+
+python python3-version/mycode/main.py
+
+~~sudo apk add freetype~~

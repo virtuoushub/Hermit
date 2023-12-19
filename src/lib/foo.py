@@ -6,7 +6,7 @@
 import pygame
 import sys
 import math
-import thread
+import _thread
 import random
 import numpy
 import string
@@ -90,7 +90,7 @@ Icon()
 
 def makeBGLayer(n):
 	global loaded, allloads, terrain, lspds, totalMade
-	print "Making Background..."
+	print("Making Background...")
 	l = pygame.Surface([width+buff*2,height])
 	l.fill(COLOR_KEY)
 	l.set_colorkey(COLOR_KEY)
@@ -131,7 +131,7 @@ def makeBGLayer(n):
 		terrain[n] = (terrain[n]+1) % 2
 
 
-	print(str(loaded)+"/"+str(allloads))
+	print((str(loaded)+"/"+str(allloads)))
 	return l
 
 
@@ -316,7 +316,7 @@ def exe(command):
 			mt(2, 3,2,1,0)
 			settings.msg = ["TERRAIN SET TO "+par[0]+".",settings.msgt]
 		elif com == "set tree density":
-			print terrain
+			print(terrain)
 			terrain = [terrain[3]]*4
 			totalMade = [0]*4
 			for landni in range(0,len(land)):
@@ -326,8 +326,8 @@ def exe(command):
 			mt(2, 3,2,1,0)
 		elif com == "eval":
 			settings.msg = [str(eval(par[0])),settings.msgt]
-	except Exception, e:
-		print "%s" % e
+	except Exception as e:
+		print("%s" % e)
 		settings.msg = ["COMMAND NOT EXECUTED.",settings.msgt]
 
 def main():
@@ -409,7 +409,7 @@ def main():
 			if locs[i]-x*lspds[i] < -width-buff:
 				locs[i] += width*2
 				Ls[i] = None
-				thread.start_new_thread(mt,(1, i))
+				_thread.start_new_thread(mt,(1, i))
 
 
 			if Lrs[i] != None:
@@ -418,7 +418,7 @@ def main():
 			if locrs[i]-x*lspds[i] < -width-buff:
 				locrs[i] += width*2
 				Lrs[i] = None
-				thread.start_new_thread(mt,(2, i))
+				_thread.start_new_thread(mt,(2, i))
 		clock.tick()
 		T += 1
 		u.text(canvas,10,10,"FPS: %.1f" % clock.get_fps(),(160,160,160))
@@ -575,7 +575,7 @@ def main():
 #t1 = thread.start_new_thread( loadscreen, () )
 #mt(1, 3,2,1,0)
 
-t1 = thread.start_new_thread( mt, (1, 3,2,1,0) )
+t1 = _thread.start_new_thread( mt, (1, 3,2,1,0) )
 loadscreen()
 
 while loaded<allloads:
@@ -585,6 +585,6 @@ print('loaded')
 
 treeDensity = 16
 
-t3 = thread.start_new_thread(mt, (2, 3,2,1,0))
+t3 = _thread.start_new_thread(mt, (2, 3,2,1,0))
 
 main()

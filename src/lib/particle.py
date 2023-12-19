@@ -1,10 +1,10 @@
 import pygame
 import sys
 import math
-import utilities as u
+from . import utilities as u
 import copy
 import random
-import noise
+from . import noise
 
 pygame.init()
 

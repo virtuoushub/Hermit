@@ -2,10 +2,10 @@
 import pygame
 import sys
 import math
-import utilities as u
+from . import utilities as u
 import copy
 import random
-import noise
+from . import noise
 import numpy as np
 
 pygame.init()
@@ -28,7 +28,7 @@ def filter(array,t = 0):
 if __name__ == "__main__":
 	screen = pygame.display.set_mode([640,320])
 	clock = pygame.time.Clock()
-	print screen.get_bitsize()
+	print(screen.get_bitsize())
 	t = 0
 	while 1:
 		t += 100
@@ -47,6 +47,6 @@ if __name__ == "__main__":
 
 		array = [pygame.surfarray.pixels_red(screen),pygame.surfarray.pixels_green(screen),pygame.surfarray.pixels_blue(screen)]
 
-		filter(array,t)
+		list(filter(array,t))
 		#pygame.surfarray.blit_array(screen,array)
 		pygame.display.flip()
