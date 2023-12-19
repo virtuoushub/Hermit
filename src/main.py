@@ -15,7 +15,7 @@ import os
 
 ## dependencies
 import pygame
-import pygame._view
+# import pygame._view
 import numpy
 
 ## custom modules

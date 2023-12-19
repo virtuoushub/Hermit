@@ -11,7 +11,7 @@ A man. A horse. A nature.
 ## HOW TO RUN
 Download the project. In terminal, type:
 ```bash
-$ python /path/to/folder/src/main.py
+$ python ./src/main.py
 ```
 
 ## VIDEO
@@ -57,3 +57,9 @@ SDL-dev
 python python3-version/mycode/main.py
 
 ~~sudo apk add freetype~~
+
+```sh
+2to3 --output-dir=python3-version/mycode -W -n src
+```
+
+sudo apk add freetype-dev
